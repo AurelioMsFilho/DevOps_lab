@@ -1,0 +1,21 @@
+name: CI - Meu primeiro pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar codigo
+        uses: actions/checkout@v4
+
+      - name: Verificar arquivos
+        run: |
+          echo "Pipeline executado com sucesso!"
+          echo "Listando arquivos do projeto:"
+          ls -la
