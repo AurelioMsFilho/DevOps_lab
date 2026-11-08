@@ -14,8 +14,16 @@ jobs:
       - name: Baixar codigo
         uses: actions/checkout@v7
 
+      - name: Verificar arquivos obrigatorios
+        run: |
+          test -f README.md || { echo "ERRO: README.md nao encontrado"; exit 1; }
+          test -f documentacao-projetos.txt || { echo "ERRO: documentacao-projetos.txt nao encontrado"; exit 1; }
+          echo "Todos os arquivos obrigatorios foram encontrados!"
+
       - name: Verificar arquivos
         run: |
           echo "Pipeline executado com sucesso!"
           echo "Listando arquivos do projeto:"
           ls -la
+
+    
