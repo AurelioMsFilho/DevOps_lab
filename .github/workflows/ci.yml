@@ -26,4 +26,6 @@ jobs:
           echo "Listando arquivos do projeto:"
           ls -la
 
-    
+      - name: testar falha controlada
+        run: |   
+          test -f arquivo-inexistente.txt || { echo "Erro: arquivo nao encontrado"; exit 1; } 
