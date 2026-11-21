@@ -1,0 +1,4 @@
+Aula 08 - Merge Request
+
+Aprendendo o fluxo profissional de Git.
+Criacao de branches, commits e Pull Requests.
